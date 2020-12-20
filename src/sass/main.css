@@ -758,6 +758,28 @@ h6 {
   color: #ffffff;
 }
 
+.up-btn {
+  position: fixed;
+  z-index: 1000;
+  right: 10%;
+  bottom: 10%;
+  width: 40px;
+  height: 40px;
+  font-weight: 700;
+}
+
+.up-btn:hover, .up-btn:focus {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .up-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 30;
+  }
+}
+
 .hero {
   display: -webkit-box;
   display: -ms-flexbox;

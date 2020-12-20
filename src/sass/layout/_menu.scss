@@ -490,3 +490,30 @@
     color: $text-color-hero;
   }
 }
+
+.up-btn {
+  position: fixed;
+  z-index: 1000;
+
+  right: 10%;
+  bottom:10%;
+
+  width: 40px;
+  height: 40px;
+
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    color: $text-color-hero;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+
+    font-size: 30;
+     
+  }
+
+}
