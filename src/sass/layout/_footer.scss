@@ -20,8 +20,8 @@ footer {
   }
 
   @media screen and (min-width: 768px) and (max-width: 1199px) {
-    margin-left: 20px;
-    margin-right: 20px;
+    // margin-left: 20px;
+    // margin-right: 20px;
 
     width: 340px;
   }
@@ -94,7 +94,7 @@ footer {
   justify-content: flex-end;
 
   @media screen and (min-width: 768px) {
-    margin-right: 20px;
+    // margin-right: 20px;
   }
 }
 
@@ -136,7 +136,8 @@ footer {
   align-items: center;
 }
 
-.social-icon:hover {
+.social-icon:hover,
+.social-icon:focus {
   background-color: $title-text-color;
 }
 
@@ -168,7 +169,7 @@ footer {
     font-size: 14px;
     line-height: 1.86;
 
-    margin-right: 20px;
+    // margin-right: 20px;
   }
 
   @media screen and (min-width: 1200px) {
@@ -176,7 +177,7 @@ footer {
     line-height: 1.86;
     letter-spacing: 0.02em;
 
-    margin-right: 20px;
+    // margin-right: 20px;
   }
 }
 
