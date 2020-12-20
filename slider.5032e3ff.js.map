@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/slider.js"],"names":["$","slick"],"mappings":";AAAAA,EAAE,OAAOC","file":"slider.5032e3ff.js","sourceRoot":"..\\src","sourcesContent":["$('.sl').slick();"]}

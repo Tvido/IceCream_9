@@ -189,11 +189,69 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"./..\\images\\hero\\icecream_mob.png":[["icecream_mob.1dcd8ac2.png","images/hero/icecream_mob.png"],"images/hero/icecream_mob.png"],"./..\\images\\hero\\ellipse_mob.png":[["ellipse_mob.131c730e.png","images/hero/ellipse_mob.png"],"images/hero/ellipse_mob.png"],"./..\\images\\hero\\icecream_tablet.png":[["icecream_tablet.ca2dfdc3.png","images/hero/icecream_tablet.png"],"images/hero/icecream_tablet.png"],"./..\\images\\hero\\ellipse_tablet.png":[["ellipse_tablet.6ebaa9de.png","images/hero/ellipse_tablet.png"],"images/hero/ellipse_tablet.png"],"./..\\images\\hero\\icecream_desktop.png":[["icecream_desktop.9c65d42d.png","images/hero/icecream_desktop.png"],"images/hero/icecream_desktop.png"],"./..\\images\\hero\\ellipse_desktop.png":[["ellipse_desktop.247e77d7.png","images/hero/ellipse_desktop.png"],"images/hero/ellipse_desktop.png"],"./..\\images\\section2\\home-pic1.png":[["home-pic1.6bdadeb7.png","images/section2/home-pic1.png"],"images/section2/home-pic1.png"],"./..\\images\\section2\\home-pic2.png":[["home-pic2.7456e52c.png","images/section2/home-pic2.png"],"images/section2/home-pic2.png"],"./..\\images\\section2\\home-pic3.png":[["home-pic3.9dbeecdc.png","images/section2/home-pic3.png"],"images/section2/home-pic3.png"],"./..\\images\\section3\\milk-desk.png":[["milk-desk.88317d6f.png","images/section3/milk-desk.png"],"images/section3/milk-desk.png"],"./..\\images\\section3\\milk.png":[["milk.7508ad31.png","images/section3/milk.png"],"images/section3/milk.png"],"./..\\images\\section3\\apple.png":[["apple.114b81a8.png","images/section3/apple.png"],"images/section3/apple.png"],"./..\\images\\section3\\candy.png":[["candy.bde14c95.png","images/section3/candy.png"],"images/section3/candy.png"],"./..\\images\\icons\\quotes.svg":[["quotes.a2cb9615.svg","images/icons/quotes.svg"],"images/icons/quotes.svg"],"./..\\images\\testimonuals\\vector-tel.svg":[["vector-tel.dfc9f0a5.svg","images/testimonuals/vector-tel.svg"],"images/testimonuals/vector-tel.svg"],"./..\\images\\testimonuals\\vector-tablet.svg":[["vector-tablet.14de2fec.svg","images/testimonuals/vector-tablet.svg"],"images/testimonuals/vector-tablet.svg"],"./..\\images\\testimonuals\\vector-decstop.svg":[["vector-decstop.0015ea1e.svg","images/testimonuals/vector-decstop.svg"],"images/testimonuals/vector-decstop.svg"],"./..\\images\\section5\\img51-desktop.png":[["img51-desktop.fc863ab7.png","images/section5/img51-desktop.png"],"images/section5/img51-desktop.png"],"./..\\images\\section5\\img51-desktop@2x.png":[["img51-desktop@2x.fc784ac4.png","images/section5/img51-desktop@2x.png"],"images/section5/img51-desktop@2x.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/slider.js":[function(require,module,exports) {
+var slides = document.querySelectorAll('#slides .slide');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide, 3000);
+
+function nextSlide() {
+  slides[currentSlide].className = 'slide';
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].className = 'slide showing';
+}
+},{}],"js/menu.js":[function(require,module,exports) {
+(function () {
+  var refs = {
+    openModalBtn: document.querySelector('[data-menu-open]'),
+    closeModalBtn: document.querySelector('[data-menu-close]'),
+    modal: document.querySelector('[data-menu]')
+  };
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle('is-open');
+  }
+})();
+
+(function () {
+  var refs = {
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]')
+  };
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
+  }
+})();
+},{}],"js/moblie-modal.js":[function(require,module,exports) {
+(function () {
+  var refs = {
+    openModalBtn: document.querySelector('[mob-data-mod-open]'),
+    closeModalBtn: document.querySelector('[mob-data-mod-close]'),
+    modal: document.querySelector('[mob-data-mod]')
+  };
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
+  }
+})();
+},{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./js/slider");
+
+require("./js/menu");
+
+require("./js/moblie-modal");
+},{"./sass/main.scss":"sass/main.scss","./js/slider":"js/slider.js","./js/menu":"js/menu.js","./js/moblie-modal":"js/moblie-modal.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -221,7 +279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49337" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57395" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
